@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Mặt hàng mới - Hệ thống Quản lý Kho hàng</title>
+    <!-- Bootstrap 3 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Quản lý Kho hàng</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+                </li>
+                <li class="active">
+                    <a href="#productSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                        <i class="fa-solid fa-boxes-stacked"></i> Quản lý Mặt hàng
+                    </a>
+                    <ul class="collapse list-unstyled show" id="productSubmenu">
+                        <li><a href="products.html">Danh sách mặt hàng</a></li>
+                        <li class="active"><a href="add-product.html">Thêm mặt hàng mới</a></li>
+                        <li><a href="categories.html">Danh mục</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#inventorySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa-solid fa-warehouse"></i> Quản lý Kho hàng
+                    </a>
+                    <ul class="collapse list-unstyled" id="inventorySubmenu">
+                        <li><a href="inventory.html">Tồn kho</a></li>
+                        <li><a href="stock-in.html">Nhập kho</a></li>
+                        <li><a href="stock-out.html">Xuất kho</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#supplierSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa-solid fa-truck-field"></i> Nhà cung cấp
+                    </a>
+                    <ul class="collapse list-unstyled" id="supplierSubmenu">
+                        <li><a href="suppliers.html">Danh sách nhà cung cấp</a></li>
+                        <li><a href="add-supplier.html">Thêm nhà cung cấp</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="orders.html"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
+                </li>
+                <li>
+                    <a href="reports.html"><i class="fa-solid fa-chart-column"></i> Báo cáo</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fa-solid fa-gear"></i> Cài đặt</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><i class="fa-solid fa-bell"></i> <span class="badge">5</span></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa-solid fa-user"></i> Admin <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="profile.html">Hồ sơ</a></li>
+                                    <li><a href="settings.html">Cài đặt</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="login.html">Đăng xuất</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Add Product Content -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Thêm Mặt hàng mới</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Dashboard</a></li>
+                            <li><a href="products.html">Quản lý Mặt hàng</a></li>
+                            <li class="active">Thêm Mặt hàng mới</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa-solid fa-plus"></i> Thông tin Mặt hàng</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form id="add-product-form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="product-name" class="col-sm-2 control-label">Tên mặt hàng <span class="text-danger">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="product-name" placeholder="Nhập tên mặt hàng" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-category" class="col-sm-2 control-label">Danh mục <span class="text-danger">*</span></label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="product-category" required>
+                                                <option value="">-- Chọn danh mục --</option>
+                                                <option value="1">Laptop</option>
+                                                <option value="2">Điện thoại</option>
+                                                <option value="3">Máy tính bảng</option>
+                                                <option value="4">Phụ kiện</option>
+                                                <option value="5">TV & Màn hình</option>
+                                                <option value="6">Thiết bị văn phòng</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-sku" class="col-sm-2 control-label">Mã SKU</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="product-sku" placeholder="Nhập mã SKU">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-barcode" class="col-sm-2 control-label">Mã vạch</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="product-barcode" placeholder="Nhập mã vạch">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-description" class="col-sm-2 control-label">Mô tả</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" id="product-description" rows="5" placeholder="Nhập mô tả sản phẩm"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-price" class="col-sm-2 control-label">Giá nhập <span class="text-danger">*</span></label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="product-price" placeholder="Nhập giá nhập" required>
+                                                <span class="input-group-addon">VNĐ</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <label for="product-selling-price" class="col-sm-2 control-label">Giá bán <span class="text-danger">*</span></label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="product-selling-price" placeholder="Nhập giá bán" required>
+                                                <span class="input-group-addon">VNĐ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-quantity" class="col-sm-2 control-label">Số lượng <span class="text-danger">*</span></label>
+                                        <div class="col-sm-4">
+                                            <input type="number" class="form-control" id="product-quantity" placeholder="Nhập số lượng" min="0" required>
+                                        </div>
+                                        
+                                        <label for="product-unit" class="col-sm-2 control-label">Đơn vị</label>
+                                        <div class="col-sm-4">
+                                            <select class="form-control" id="product-unit">
+                                                <option value="cái">Cái</option>
+                                                <option value="bộ">Bộ</option>
+                                                <option value="chiếc">Chiếc</option>
+                                                <option value="hộp">Hộp</option>
+                                                <option value="thùng">Thùng</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-supplier" class="col-sm-2 control-label">Nhà cung cấp</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="product-supplier">
+                                                <option value="">-- Chọn nhà cung cấp --</option>
+                                                <option value="1">Công ty TNHH ABC</option>
+                                                <option value="2">Công ty TNHH XYZ</option>
+                                                <option value="3">Công ty Cổ phần DEF</option>
+                                                <option value="4">Công ty Cổ phần GHI</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-warehouse" class="col-sm-2 control-label">Kho hàng</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="product-warehouse">
+                                                <option value="">-- Chọn kho hàng --</option>
+                                                <option value="1">Kho Hà Nội</option>
+                                                <option value="2">Kho Hồ Chí Minh</option>
+                                                <option value="3">Kho Đà Nẵng</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-image" class="col-sm-2 control-label">Hình ảnh</label>
+                                        <div class="col-sm-10">
+                                            <input type="file" id="product-image" accept="image/*">
+                                            <p class="help-block">Chọn hình ảnh cho sản phẩm (JPG, PNG, GIF)</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Trạng thái</label>
+                                        <div class="col-sm-10">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="product-status" id="product-status-active" value="active" checked>
+                                                    Hoạt động
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="product-status" id="product-status-inactive" value="inactive">
+                                                    Không hoạt động
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fa-solid fa-save"></i> Lưu mặt hàng
+                                            </button>
+                                            <button type="button" class="btn btn-default" onclick="window.location.href='products.html'">
+                                                <i class="fa-solid fa-times"></i> Hủy
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
