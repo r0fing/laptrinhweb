@@ -105,6 +105,39 @@ ul ul a {
     font-size: 40px;
 }
 
+.panel-info {
+    border-color: #5bc0de;
+}
+
+.panel-info .panel-heading {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.panel-success {
+    border-color: #28a745;
+}
+
+.panel-success .panel-heading {
+    background-color: #28a745;
+    color: white;
+}
+
+.panel-warning {
+    border-color: #ffc107;
+}
+
+.panel-warning .panel-heading {
+    background-color: #ffc107;
+    color: white;
+}
+
+.panel-default .panel-heading {
+    color: white;
+    background-color: #6c757d;
+}
+
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
