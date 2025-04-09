@@ -93,7 +93,7 @@
             </nav>
 
             <!-- Dashboard Content -->
-            <div class="container-fluid">
+            <div class="container-fluid dashboard-stats">
                 <h1>Dashboard</h1>
                 <!-- Dashboard Cards -->
                 <div class="row">
@@ -106,7 +106,7 @@
                                         <i class="fa-solid fa-boxes-stacked fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
+                                        <div class="huge product-count">26</div>
                                         <div>Mặt hàng</div>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                         <i class="fa-solid fa-truck-field fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
+                                        <div class="huge provider-count">12</div>
                                         <div>Nhà cung cấp</div>
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@
                                         <i class="fa-solid fa-warehouse fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">3</div>
+                                        <div class="huge inventory-count">3</div>
                                         <div>Kho hàng</div>
                                     </div>
                                 </div>
@@ -178,7 +178,7 @@
                                         <i class="fa-solid fa-triangle-exclamation fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">5</div>
+                                        <div class="huge empty-count">5</div>
                                         <div>Hết hàng</div>
                                     </div>
                                 </div>
@@ -202,27 +202,8 @@
                                 <h3 class="panel-title"><i class="fa-solid fa-clock"></i> Hoạt động gần đây</h3>
                             </div>
                             <div class="panel-body">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">vừa xong</span>
-                                        <i class="fa-solid fa-plus"></i> Thêm sản phẩm mới: Laptop Dell XPS 13
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">2 giờ trước</span>
-                                        <i class="fa-solid fa-truck"></i> Nhập kho 50 Điện thoại Samsung Galaxy S21
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">hôm nay</span>
-                                        <i class="fa-solid fa-money-bill"></i> Xuất kho 20 Tai nghe Apple AirPods Pro
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">hôm qua</span>
-                                        <i class="fa-solid fa-user"></i> Thêm nhà cung cấp mới: Công ty TNHH ABC
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">3 ngày trước</span>
-                                        <i class="fa-solid fa-check"></i> Cập nhật tồn kho
-                                    </a>
+                                <div class="list-group recent-activities">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -285,5 +266,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
+    <!-- Product JS -->
+    <script src="js/product.js"></script>
 </body>
 </html>

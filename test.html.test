@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý kho hàng</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Nội dung trang web -->
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Quản lý kho hàng</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Nhập kho</a></li>
+                <li><a href="#">Xuất kho</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Tổng quan kho hàng</h1>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Tổng số sản phẩm</div>
+                    <div class="panel-body">
+                        <h3>1000</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Sản phẩm còn hàng</div>
+                    <div class="panel-body">
+                        <h3>800</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Sản phẩm sắp hết</div>
+                    <div class="panel-body">
+                        <h3>150</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Sản phẩm hết hàng</div>
+                    <div class="panel-body">
+                        <h3>50</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Danh sách sản phẩm</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Mã SP</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SP001</td>
+                    <td>Áo thun nam</td>
+                    <td>100</td>
+                    <td>150,000 đ</td>
+                    <td><span class="label label-success">Còn hàng</span></td>
+                </tr>
+                <tr>
+                    <td>SP002</td>
+                    <td>Quần jean nữ</td>
+                    <td>5</td>
+                    <td>350,000 đ</td>
+                    <td><span class="label label-warning">Sắp hết</span></td>
+                </tr>
+                <tr>
+                    <td>SP003</td>
+                    <td>Giày thể thao</td>
+                    <td>0</td>
+                    <td>500,000 đ</td>
+                    <td><span class="label label-danger">Hết hàng</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
